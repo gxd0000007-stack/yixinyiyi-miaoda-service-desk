@@ -1,0 +1,232 @@
+.role-management-page {
+  min-height: 100vh;
+  padding: 32px;
+  color: #18243a;
+  background: linear-gradient(145deg, #f5f8ff 0%, #eef3ff 55%, #f8faff 100%);
+}
+
+.role-page-loading,
+.role-access-denied {
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.role-access-denied svg {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto;
+  color: #336dff;
+}
+
+.role-page-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 24px;
+  align-items: start;
+  max-width: 1500px;
+  margin: 0 auto 24px;
+}
+
+.role-page-heading span {
+  color: #6b7c9d;
+  font-size: 14px;
+}
+
+.role-page-heading h1 {
+  margin: 8px 0;
+  font-size: 34px;
+  font-weight: 750;
+}
+
+.role-page-heading p,
+.role-table-header p {
+  margin: 0;
+  color: #7f8da8;
+}
+
+.role-current-user {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-width: 230px;
+  padding: 14px 18px;
+  border: 1px solid #d9e2f4;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.role-current-user svg {
+  color: #336dff;
+}
+
+.role-current-user div {
+  display: grid;
+  gap: 3px;
+}
+
+.role-current-user span {
+  color: #8a97ae;
+  font-size: 12px;
+}
+
+.role-safety-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  max-width: 1500px;
+  margin: 0 auto 18px;
+  overflow: hidden;
+  border: 1px solid #dbe4f4;
+  border-radius: 16px;
+  background: #dbe4f4;
+}
+
+.role-safety-strip div {
+  display: grid;
+  gap: 6px;
+  padding: 18px 22px;
+  background: #fff;
+}
+
+.role-safety-strip strong {
+  color: #245ee9;
+}
+
+.role-safety-strip span {
+  color: #77869f;
+  font-size: 13px;
+}
+
+.role-table-panel {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid #dbe4f4;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 16px 45px rgba(59, 85, 136, 0.08);
+}
+
+.role-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.role-table-header h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.role-name-cell {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.role-actions {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.role-member-section {
+  display: grid;
+  gap: 12px;
+  padding: 16px 0;
+  border-top: 1px solid #e7ecf4;
+}
+
+.role-member-section h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.role-special-member {
+  display: flex;
+  min-width: 210px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 12px;
+  border: 1px solid #dce4f2;
+  border-radius: 10px;
+}
+
+.role-special-member > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.role-select-block,
+.role-fields,
+.role-fields label {
+  display: grid;
+  gap: 8px;
+}
+
+.role-select-block label,
+.role-fields label > span {
+  color: #697995;
+  font-size: 13px;
+}
+
+.role-frontdesk-note {
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: #856217;
+  background: #fff7dd;
+}
+
+.role-management-page :where(button, input, select, textarea, label) {
+  font-size: var(--type-body);
+}
+
+.role-page-heading span,
+.role-current-user span,
+.role-safety-strip span,
+.role-select-block label,
+.role-fields label > span {
+  font-size: var(--type-body);
+}
+
+.role-page-heading h1 {
+  font-size: var(--type-display);
+}
+
+.role-table-header h2 {
+  font-size: 24px;
+}
+
+.role-member-section h3 {
+  font-size: var(--type-section);
+}
+
+.role-safety-strip div:nth-child(1) { background: var(--emphasis-blue-bg); }
+.role-safety-strip div:nth-child(2) { background: var(--emphasis-amber-bg); }
+.role-safety-strip div:nth-child(3) { background: var(--emphasis-green-bg); }
+
+@media (max-width: 900px) {
+  .role-management-page {
+    padding: 18px;
+  }
+
+  .role-page-header {
+    grid-template-columns: 1fr;
+  }
+
+  .role-current-user {
+    min-width: 0;
+  }
+
+  .role-safety-strip {
+    grid-template-columns: 1fr;
+  }
+}

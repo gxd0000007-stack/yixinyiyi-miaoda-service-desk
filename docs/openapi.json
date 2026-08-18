@@ -1,0 +1,117 @@
+{
+  "paths": {
+    "/openapi/customer-card-wallets/{customerId}": {
+      "get": {
+        "operationId": "findCustomerCardWallet",
+        "summary": "查询客户独立卡账户余额、项目余次与卡账流水",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customerId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "客户资料库中的客户 ID",
+            "example": "339d4a15-0ad8-4e88-9267-8ba99ba6fd27"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "客户卡账户查询成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "customerId",
+                    "customerName",
+                    "totalBalanceExact",
+                    "accounts",
+                    "ledger",
+                    "storage",
+                    "sourceMode"
+                  ],
+                  "properties": {
+                    "customerId": {
+                      "type": "string",
+                      "description": "客户资料库 ID",
+                      "example": "339d4a15-0ad8-4e88-9267-8ba99ba6fd27"
+                    },
+                    "customerName": {
+                      "type": "string",
+                      "description": "客户姓名",
+                      "example": "李丽颖"
+                    },
+                    "totalBalanceExact": {
+                      "type": "string",
+                      "description": "本金与赠送金合计余额，固定两位小数",
+                      "example": "9.10"
+                    },
+                    "accounts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "description": "卡账户与项目权益明细",
+                        "example": {
+                          "id": "a10baf21-4d07-44f2-85d6-d7b552f6b78f",
+                          "cardName": "门店储值账户",
+                          "cardType": "储值账户",
+                          "status": "active",
+                          "validity": "永久有效",
+                          "principalBalanceExact": "9.10",
+                          "giftBalanceExact": "0.00",
+                          "sessionValueExact": "0.00",
+                          "entitlements": []
+                        }
+                      }
+                    },
+                    "ledger": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "description": "扣卡或撤销流水",
+                        "example": {
+                          "id": "bf080998-6c44-42a4-b9cc-7ae8c9b09145",
+                          "transactionNo": "KC20260816153000b61f268e0f",
+                          "transactionType": "deduction",
+                          "deductionMode": "principal",
+                          "cardName": "门店储值账户",
+                          "appointmentId": "4",
+                          "projectName": "深层补水管理",
+                          "amountExact": "9.00",
+                          "quantity": 0,
+                          "beforeAmountExact": "9.10",
+                          "afterAmountExact": "0.10",
+                          "operatorName": "红红",
+                          "occurredAt": "2026-08-16T07:30:00.000Z",
+                          "reversed": false
+                        }
+                      }
+                    },
+                    "storage": {
+                      "type": "string",
+                      "enum": [
+                        "miaoda_cloud_database"
+                      ],
+                      "description": "卡账云端存储位置",
+                      "example": "miaoda_cloud_database"
+                    },
+                    "sourceMode": {
+                      "type": "string",
+                      "enum": [
+                        "independent_internal_wallet"
+                      ],
+                      "description": "卡账由门店独立系统维护",
+                      "example": "independent_internal_wallet"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

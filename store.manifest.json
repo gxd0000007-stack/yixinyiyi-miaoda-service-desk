@@ -1,0 +1,13 @@
+{
+  "productId": "yixinyiyi-medical-beauty-service-desk",
+  "name": "壹心壹意医疗美容｜客户服务台",
+  "version": "1.0.0",
+  "miaodaAppId": "app_17bqq1hu1r4",
+  "backupFormat": "yixinyiyi-store-backup",
+  "backupFormatVersion": 1,
+  "schemaVersion": "2026-08-18.009",
+  "visibility": "private",
+  "distribution": "github-private-release",
+  "includesLiveDatabaseRows": false,
+  "notes": "代码仓库保留当前门店品牌和业务逻辑；线上业务数据需使用老板专属备份接口另行导出并加密。"
+}

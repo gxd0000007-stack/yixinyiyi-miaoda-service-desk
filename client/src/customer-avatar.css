@@ -1,0 +1,91 @@
+.customer-cat-avatar {
+  position: relative;
+  display: inline-block;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(104, 123, 160, 0.16);
+  border-radius: 28%;
+  background: #f3f6fb;
+  box-shadow: 0 3px 12px rgba(28, 49, 89, 0.08);
+  vertical-align: middle;
+}
+
+.customer-cat-avatar-image,
+.customer-cat-avatar-sprite {
+  position: absolute;
+  max-width: none;
+  display: block;
+}
+
+.customer-cat-avatar-image {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.customer-avatar-picker {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid #dbe4f4;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f7faff, #fffaf2);
+}
+
+.customer-avatar-picker-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.customer-avatar-picker-head > div {
+  display: grid;
+  gap: 3px;
+}
+
+.customer-avatar-picker-head strong { color: #18243a; font-size: 15px; }
+.customer-avatar-picker-head small { color: #748199; font-size: 12px; }
+
+.customer-avatar-presets {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.customer-avatar-preset {
+  display: grid;
+  min-width: 0;
+  place-items: center;
+  gap: 5px;
+  padding: 7px 3px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #65728a;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.customer-avatar-preset:hover { border-color: #b7caff; }
+.customer-avatar-preset.active {
+  border-color: #3974ff;
+  background: #edf3ff;
+  color: #245edb;
+  box-shadow: 0 0 0 2px rgba(57, 116, 255, 0.08);
+}
+
+.customer-avatar-upload-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.customer-avatar-upload-row small { color: #7b879c; }
+.customer-avatar-upload-error { color: #dc3d4c !important; }
+
+@media (max-width: 760px) {
+  .customer-avatar-presets { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .customer-avatar-picker-head { align-items: flex-start; }
+}
