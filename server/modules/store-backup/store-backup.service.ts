@@ -1,37 +1,14 @@
-export const STORE_BACKUP_TABLES = [
-  'card_package_template',
-  'customer_asset',
-  'customer_card_account',
-  'customer_card_entitlement',
-  'customer_transaction',
-  'customer_transaction_item',
-  'inventory_product',
-  'inventory_movement',
-  'customer_card_ledger',
-  'customer_coupon',
-  'customer_import_audit',
-  'service_config',
-  'service_state',
-  'pg_audit',
-] as const;
+import { createHash } from 'node:crypto';
 
-export type StoreBackupTableName = (typeof STORE_BACKUP_TABLES)[number];
+import {
+  STORE_BACKUP_TABLES,
+  type StoreBackup,
+  type StoreBackupTable,
+  type StoreBackupTableName,
+} from '@shared/store-backup-file';
 
-export type StoreBackupTable = {
-  name: StoreBackupTableName;
-  rowCount: number;
-  checksum: string;
-  rows: unknown[];
-};
-
-export type StoreBackup = {
-  format: 'yixinyiyi-store-backup';
-  formatVersion: 1;
-  schemaVersion: string;
-  generatedAt: string;
-  tables: StoreBackupTable[];
-  checksum: string;
-};
+export { STORE_BACKUP_TABLES };
+export type { StoreBackup, StoreBackupTable, StoreBackupTableName };
 
 export interface StoreBackupAdapter {
   readTable(table: StoreBackupTableName): Promise<unknown[]>;
@@ -156,4 +133,3 @@ export class StoreBackupService {
     });
   }
 }
-import { createHash } from 'node:crypto';

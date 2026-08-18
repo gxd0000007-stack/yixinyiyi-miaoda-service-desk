@@ -75,6 +75,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@client/src/components/ui/tooltip';
+import { StoreBackupPanel } from './StoreBackupPanel';
 
 import './role-management.css';
 
@@ -608,6 +609,8 @@ export default function RoleManagementPage() {
           scroll={{ x: 1080 }}
         />
       </section>
+
+      {isOwner && <StoreBackupPanel />}
 
       <Dialog open={createOpen} onOpenChange={setCreateOpen}>
         <DialogContent>

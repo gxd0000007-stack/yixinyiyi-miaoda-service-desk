@@ -1,5 +1,6 @@
 import { logger } from '@lark-apaas/client-toolkit/logger';
 import { axiosForBackend } from '@lark-apaas/client-toolkit/utils/getAxiosForBackend';
+import { createStoreBackupApi } from '@shared/store-backup-api';
 import type {
   AddMembersRequest,
   CreateRoleRequest,
@@ -49,6 +50,12 @@ import type {
   UpdateRoleRequest,
   UpdateInventoryProductCostRequest,
 } from '@shared/api.interface';
+
+const storeBackupApi = createStoreBackupApi(async <T>(request) =>
+  axiosForBackend<T>(request),
+);
+
+export const { exportStoreBackup, restoreStoreBackup } = storeBackupApi;
 
 export async function getCustomerFollowupTasks(): Promise<CustomerFollowupTasksResponse> {
   const response = await axiosForBackend<CustomerFollowupTasksResponse>({

@@ -111,6 +111,194 @@
   box-shadow: 0 16px 45px rgba(59, 85, 136, 0.08);
 }
 
+.store-backup-panel {
+  max-width: 1500px;
+  margin: 24px auto 0;
+  padding: 24px;
+  border: 1px solid #dbe4f4;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 16px 45px rgba(59, 85, 136, 0.08);
+}
+
+.store-backup-heading {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+.store-backup-title-icon,
+.store-backup-card-icon {
+  display: grid;
+  place-items: center;
+  color: #245ee9;
+  background: #eaf1ff;
+}
+
+.store-backup-title-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+}
+
+.store-backup-title-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.store-backup-heading span {
+  color: #6b7c9d;
+  font-size: 13px;
+}
+
+.store-backup-heading h2 {
+  margin: 4px 0 6px;
+  font-size: 24px;
+  text-wrap: balance;
+}
+
+.store-backup-heading p,
+.store-backup-card p {
+  margin: 0;
+  color: #77869f;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.store-backup-owner-lock {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 13px;
+  border-radius: 999px;
+  color: #245ee9;
+  font-size: 13px;
+  font-weight: 650;
+  background: #edf3ff;
+}
+
+.store-backup-owner-lock svg {
+  width: 16px;
+  height: 16px;
+}
+
+.store-backup-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.store-backup-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 20px;
+  border: 1px solid #dce5f5;
+  border-radius: 16px;
+  background: #fbfcff;
+}
+
+.store-backup-card-restore {
+  border-color: #eadfc5;
+  background: #fffdf8;
+}
+
+.store-backup-card-restore .store-backup-card-icon {
+  color: #a46916;
+  background: #fff1d7;
+}
+
+.store-backup-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+
+.store-backup-card h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.store-backup-action-button {
+  grid-column: 1 / -1;
+  min-height: 44px;
+  justify-self: start;
+}
+
+.store-backup-security-note {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  color: #805a16;
+  background: #fff6e4;
+}
+
+.store-backup-security-note svg {
+  width: 18px;
+  min-width: 18px;
+  margin-top: 1px;
+}
+
+.store-backup-restore-form,
+.store-backup-file-picker,
+.store-backup-confirm-field {
+  display: grid;
+  gap: 9px;
+}
+
+.store-backup-restore-form {
+  gap: 16px;
+}
+
+.store-backup-file-picker > span,
+.store-backup-confirm-field > span {
+  color: #44536c;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.store-backup-file-status {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border-radius: 12px;
+  color: #147044;
+  background: #ebf9f1;
+}
+
+.store-backup-file-status.is-error {
+  color: #b42318;
+  background: #fff0ef;
+}
+
+.store-backup-file-status svg {
+  width: 20px;
+  min-width: 20px;
+}
+
+.store-backup-file-status div {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.store-backup-file-status strong,
+.store-backup-file-status span {
+  overflow-wrap: anywhere;
+}
+
+.store-backup-file-status span {
+  font-size: 13px;
+}
+
 .role-table-header {
   display: flex;
   align-items: center;
@@ -227,6 +415,23 @@
   }
 
   .role-safety-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .store-backup-panel {
+    padding: 18px;
+  }
+
+  .store-backup-heading {
+    grid-template-columns: auto 1fr;
+  }
+
+  .store-backup-owner-lock {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .store-backup-actions {
     grid-template-columns: 1fr;
   }
 }

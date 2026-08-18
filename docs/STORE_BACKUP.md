@@ -8,13 +8,13 @@
 
 ## 导出
 
-老板登录运行态应用后调用：
+老板登录运行态应用后进入：
 
 ```text
-GET /api/store-backup/export
+员工与权限 → 备份与恢复 → 一键导出
 ```
 
-响应是 `yixinyiyi-store-backup` JSON。该文件包含客户隐私和交易信息，必须立即加密：
+浏览器会下载带时间戳的 `yixinyiyi-store-backup-*.json`。该文件包含客户隐私和交易信息，必须立即加密：
 
 ```bash
 ./scripts/encrypt-store-backup.sh input.store-backup.json output.store-backup.enc
@@ -25,6 +25,7 @@ GET /api/store-backup/export
 ## 恢复保护
 
 - 仅老板角色可调用恢复接口。
+- 页面必须选择结构有效的备份，并输入`确认恢复门店数据`。
 - 请求必须明确携带 `X-Confirm-Empty-Store: RESTORE_EMPTY_STORE`。
 - 恢复前和事务内都会检查全部目标表为空。
 - 任意表非空即拒绝，不执行删除、覆盖或合并。

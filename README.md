@@ -23,8 +23,9 @@ npm run release:verify
 
 ## 数据备份
 
-- 导出：老板登录后调用 `GET /api/store-backup/export`
-- 恢复：仅对空数据库调用 `POST /api/store-backup/restore`
+- 页面入口：`老板管理端 → 员工与权限 → 备份与恢复`
+- 导出：老板点击“一键导出”，系统下载带时间戳的 JSON 备份
+- 恢复：在全新空数据库中点击“选择备份恢复”，选择已解密的 JSON
 - 恢复请求必须带请求头：`X-Confirm-Empty-Store: RESTORE_EMPTY_STORE`
 - 原始备份必须先用 `scripts/encrypt-store-backup.sh` 加密，再上传到私有 GitHub Release。
 
